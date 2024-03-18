@@ -1,0 +1,16 @@
+name: Docker Stop Container
+
+on: workflow_dispatch
+
+jobs:
+ Docker-stop:
+   runs-on: ubuntu-latest
+   steps:
+     - name: Checkout code
+       uses: actions/checkout@v2
+
+     - name: Stop Docker Container
+       run: docker stop node-web-app 
+
+     - name: Remove Docker Container
+       run: docker rm node-web-app
