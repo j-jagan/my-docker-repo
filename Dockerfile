@@ -1,5 +1,5 @@
 #Use the official Node.js image as base 
-FROM node:14
+FROM node:latest
 
 #Set the workig directory inside the container
 WORKDIR /usr/src/app
@@ -11,7 +11,7 @@ COPY /src/main/app/package*.json ./
 RUN npm install
 
 #Copy the rest of your application code
-COPY . . 
+COPY /src/main/app/* . 
 
 #Expose the port your app runs on
 EXPOSE 3000
