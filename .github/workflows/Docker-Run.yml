@@ -1,0 +1,20 @@
+name: Docker Image Deployment
+
+on: 
+  workflow_dispatch:
+    inputs: 
+      host_port:
+        description: 'Host port for running the Docker container'
+        required: true
+jobs:
+ Docker-run:
+   runs-on: ubuntu-latest
+   steps:
+     - name: Checkout code
+       uses: actions/checkout@v2
+
+     - name: Pull Docker Image
+       run: docker pull jagannadh16/node-web-app:latest
+
+     - name: Run Docker Image
+       run: docker run -d -p ${{ github.event.inputs.host_port }}:3000 jagannadh16/node-web-app:latest
