@@ -1,7 +1,7 @@
 #Use the official Node.js image as base 
 FROM node:latest
 
-#Set the workig directory inside the container
+#Set the working directory inside the container
 WORKDIR /usr/src/app
 
 #Copy package.json and package-lock.json to the working directory
