@@ -17,4 +17,4 @@ jobs:
        run: docker pull jagannadh16/node-web-app:latest
 
      - name: Run Docker Image
-       run: docker run -d -p ${{ github.event.inputs.host_port }} --name node-web-app jagannadh16/node-web-app:latest
+       run: docker run -d -p ${{ github.event.inputs.host_port }}:3000 --name node-web-app jagannadh16/node-web-app:latest
